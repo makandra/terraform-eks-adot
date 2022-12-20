@@ -8,6 +8,8 @@ resource "kubernetes_namespace" "operator" {
 }
 
 resource "kubectl_manifest" "this" {
-  count     = length(data.kubectl_filename_list.manifests.matches)
-  yaml_body = file(element(data.kubectl_filename_list.manifests.matches, count.index))
+  count = length(data.kubectl_filename_list.manifests.matches)
+
+  apply_only = true
+  yaml_body  = file(element(data.kubectl_filename_list.manifests.matches, count.index))
 }
