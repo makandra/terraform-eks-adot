@@ -77,5 +77,5 @@ No modules.
 
 ## Outputs
 
-No outputs.
+No outputs. 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
