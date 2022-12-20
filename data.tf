@@ -7,5 +7,5 @@ data "aws_iam_openid_connect_provider" "this" {
 }
 
 data "kubectl_filename_list" "manifests" {
-  content = file("${path.module}/files/*.yaml")
+  pattern = file("${path.module}/files/*.yaml")
 }
