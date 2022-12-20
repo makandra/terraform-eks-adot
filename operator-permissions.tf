@@ -8,8 +8,8 @@ resource "kubernetes_namespace" "operator" {
 }
 
 resource "kubectl_manifest" "this" {
-  for_each   = data.kubectl_file_documents.docs.manifests
-  yaml_body  = each.value
+  count      = length(data.kubectl_file_documents.docs.manifests)
+  yaml_body  = element(data.kubectl_file_documents.docs.documents, count.index)
   apply_only = true
   depends_on = [kubernetes_namespace.operator]
 }
