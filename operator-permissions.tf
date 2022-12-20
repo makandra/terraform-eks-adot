@@ -8,7 +8,7 @@ resource "kubernetes_namespace" "operator" {
 }
 
 resource "kubectl_manifest" "namespace" {
-  yaml_body  = data.kubectl_file_documents.namespace.manifests
+  yaml_body  = data.kubectl_file_documents.namespace[0].manifests
   apply_only = true
   depends_on = [kubernetes_namespace.operator]
 }
