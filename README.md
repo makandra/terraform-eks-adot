@@ -63,7 +63,6 @@ No modules.
 | [kubernetes_service_account.adot-collector](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_account) | resource |
 | [aws_eks_cluster.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
 | [aws_iam_openid_connect_provider.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_openid_connect_provider) | data source |
-| [kubectl_filename_list.manifests](https://registry.terraform.io/providers/gavinbunney/kubectl/latest/docs/data-sources/filename_list) | data source |
 
 ## Inputs
 
