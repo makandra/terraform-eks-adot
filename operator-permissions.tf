@@ -17,7 +17,7 @@ resource "kubernetes_namespace" "operator" {
   }
 }
 
-resource "kubectl_manifest" "namespace" {
+resource "kubectl_manifest" "this" {
   count = length(local.files)
 
   yaml_body  = file(local.files[count.index])
