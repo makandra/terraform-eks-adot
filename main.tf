@@ -5,7 +5,7 @@ resource "aws_eks_addon" "this" {
   service_account_role_arn = aws_iam_role.adot_collector.arn
   depends_on = [
     helm_release.cert-manager,
-    kubectl_manifest.this
+    kubectl_manifest.namespace
   ]
 }
 
