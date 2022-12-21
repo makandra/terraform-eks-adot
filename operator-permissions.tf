@@ -1,3 +1,13 @@
+locals {
+  files = [
+    "${path.module}/files/Namespace.yaml",
+    "${path.module}/files/Role.yaml",
+    "${path.module}/files/RoleBinding.yaml",
+    "${path.module}/files/ClusterRoleBinding.yaml",
+    "${path.module}/files/ClusterRole.yaml"
+  ]
+}
+
 resource "kubernetes_namespace" "operator" {
   metadata {
     name = "opentelemetry-operator-system"
@@ -7,9 +17,9 @@ resource "kubernetes_namespace" "operator" {
   }
 }
 
-resource "kubectl_manifest" "this" {
-  for_each   = data.kubectl_file_documents.docs.manifests
-  yaml_body  = each.value
+resource "kubectl_manifest" "namespace" {
+  count = length(local.files)
+
+  yaml_body  = file(local.files[count.index])
   apply_only = true
-  depends_on = [kubernetes_namespace.operator]
 }
