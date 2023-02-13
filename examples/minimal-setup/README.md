@@ -17,7 +17,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_adot"></a> [adot](#module\_adot) | /home/claus/code/makandra_public/terraform-eks-adot | n/a |
+| <a name="module_adot"></a> [adot](#module\_adot) | ../.. | n/a |
 
 ## Resources
 
