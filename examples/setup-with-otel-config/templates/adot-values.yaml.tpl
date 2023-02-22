@@ -1,16 +1,16 @@
 awsRegion: ${region}
 clusterName: ${cluster_name}
 
-serviceAccount:
-  create: false
-  annotations: {}
-  name: "adot-collector"
 fluentbit:
   enabled: false
 adotCollector:
   daemonSet:
     createNamespace: false
     namespace: adot
+    serviceAccount:
+      create: false
+      annotations: {}
+      name: "adot-collector"
     cwexporters:
       namespace: "ContainerInsights"
       logGroupName: "${log_group_name}"
